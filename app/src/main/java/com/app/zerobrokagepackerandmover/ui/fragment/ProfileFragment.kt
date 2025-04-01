@@ -31,6 +31,10 @@ class ProfileFragment : Fragment() {
             logoutBottomSheet.show(parentFragmentManager, "LogoutBottomSheet")
         }
 
+        binding.tvAddGST.setOnClickListener {
+            findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
+        }
+
         return binding.root
     }
 }
