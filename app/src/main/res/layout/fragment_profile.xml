@@ -29,7 +29,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Unknown Name"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -84,25 +84,19 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp">
 
-                <ImageView
-                    android:id="@+id/ivAddAddress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_add"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" />
 
                 <TextView
                     android:id="@+id/tvSavedAddresses"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:drawablePadding="10dp"
                     android:text="Saved Addresses"
                     android:textSize="16sp"
-                    app:layout_constraintStart_toEndOf="@id/ivAddAddress"
-                    app:layout_constraintTop_toTopOf="@id/ivAddAddress"
-                    app:layout_constraintBottom_toBottomOf="@id/ivAddAddress" />
+                    app:drawableEndCompat="@drawable/ic_arrow_right"
+                    app:drawableStartCompat="@drawable/ic_add"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -207,44 +201,34 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp">
 
-                <!-- Help & Support Section -->
-                <ImageView
-                    android:id="@+id/ivHelp"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_help"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tvHelpSupport"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="Help &amp; Support"
+                    android:drawablePadding="10dp"
+                    app:drawableEndCompat="@drawable/ic_arrow_right"
+                    app:drawableStartCompat="@drawable/ic_help"
                     android:textSize="16sp"
-                    app:layout_constraintStart_toEndOf="@id/ivHelp"
-                    app:layout_constraintTop_toTopOf="@id/ivHelp" />
-
-                <!-- Terms & Conditions Section -->
-                <ImageView
-                    android:id="@+id/ivTerms"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_term"
-                    android:layout_marginVertical="20dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ivHelp" />
+                    app:layout_constraintTop_toTopOf="parent" />
+
 
                 <TextView
                     android:id="@+id/tvTermsConditions"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="Terms and Conditions"
                     android:textSize="16sp"
-                    app:layout_constraintStart_toEndOf="@id/ivTerms"
-                    app:layout_constraintTop_toTopOf="@id/ivTerms" />
+                    android:drawablePadding="10dp"
+                    android:layout_marginVertical="20dp"
+                    app:drawableEndCompat="@drawable/ic_arrow_right"
+                    app:drawableStartCompat="@drawable/ic_term"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHelpSupport"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -268,26 +252,29 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-        <!-- Help & Support Section -->
-        <ImageView
-            android:id="@+id/ivLogout"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_logout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvLogout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="Logout"
             android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@id/ivLogout"
-            app:layout_constraintTop_toTopOf="@id/ivLogout" />
+            android:drawablePadding="10dp"
+            app:drawableEndCompat="@drawable/ic_arrow_right"
+            app:drawableStartCompat="@drawable/ic_logout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/AppVersion"
+            android:layout_marginVertical="35dp"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 </ScrollView>
