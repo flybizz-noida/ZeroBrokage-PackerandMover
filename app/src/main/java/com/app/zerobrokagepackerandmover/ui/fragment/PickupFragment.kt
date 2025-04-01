@@ -26,6 +26,9 @@ class PickupFragment : Fragment() {
     ): View? {
         _binding = FragmentPickupBinding.inflate(inflater, container, false)
 
+        binding.ivBack.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
 
         return binding.root
     }

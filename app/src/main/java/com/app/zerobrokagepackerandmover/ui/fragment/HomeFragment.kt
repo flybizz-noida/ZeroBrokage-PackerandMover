@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.app.zerobrokagepackerandmover.R
+import androidx.navigation.fragment.findNavController
 import com.app.zerobrokagepackerandmover.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -20,9 +22,12 @@ class HomeFragment : Fragment() {
 
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        return root
+        binding.cdLocation.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_pickupFragment)
+        }
+
+        return binding.root
     }
 
     override fun onDestroyView() {
