@@ -18,9 +18,9 @@
             android:id="@+id/tvTitle"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="All India Parceld"
+            android:text="All India Parcel"
             android:textSize="20sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/aller_bd"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>

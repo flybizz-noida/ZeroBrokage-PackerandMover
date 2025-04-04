@@ -48,6 +48,7 @@
                 android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:paddingStart="15dp"
+                android:fontFamily="@font/aller_rg"
                 android:hint="Where is your PickUp ?"
                 android:background="@drawable/shape_edit_text"
                 app:layout_constraintTop_toBottomOf="@id/ivBack"
@@ -58,6 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
+                android:fontFamily="@font/aller_lt"
                 android:text="Type at least characters to start searchin"
                 app:layout_constraintTop_toBottomOf="@id/svSearch"
                 app:layout_constraintStart_toStartOf="@id/svSearch"/>
@@ -89,6 +91,7 @@
                 android:drawablePadding="15dp"
                 android:drawableStart="@drawable/ic_loc"
                 android:text="Use current location"
+                android:fontFamily="@font/aller_rg"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
@@ -101,6 +104,7 @@
                 android:drawablePadding="15dp"
                 android:drawableStart="@drawable/ic_locate"
                 android:text="Locate on the map"
+                android:fontFamily="@font/aller_rg"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>

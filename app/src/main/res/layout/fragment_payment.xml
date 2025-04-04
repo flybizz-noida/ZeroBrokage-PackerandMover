@@ -7,16 +7,65 @@
     tools:context=".ui.fragment.PaymentFragment">
 
     <TextView
-        android:id="@+id/text_notifications"
-        android:layout_width="match_parent"
+        android:id="@+id/tvPayment"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_margin="25dp"
+        android:fontFamily="@font/aller_bd"
+        android:text="Payment"
         android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPorter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:fontFamily="@font/aller_bd"
+        android:text="Porter Credit"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPayment" />
+
+    <TextView
+        android:id="@+id/tvBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/aller_lt"
+        android:text="Balance ₹0"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPorter" />
+
+    <TextView
+        android:id="@+id/tvAddMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:background="@drawable/shape_edit_text"
+        android:backgroundTint="@color/light_steel_blue"
+        android:padding="5dp"
+        android:text="Add Money"
+        android:textColor="@color/nav_color"
+        app:layout_constraintBottom_toBottomOf="@id/tvBalance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvPorter" />
+
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_marginVertical="25dp"
+        app:layout_constraintEnd_toEndOf="@id/tvAddMoney"
+        app:layout_constraintStart_toStartOf="@id/tvBalance"
+        app:layout_constraintTop_toBottomOf="@id/tvAddMoney" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -48,7 +48,13 @@
         android:id="@+id/pickupFragment"
         android:name="com.app.zerobrokagepackerandmover.ui.fragment.PickupFragment"
         android:label="fragment_pickup"
-        tools:layout="@layout/fragment_pickup"/> >
+        tools:layout="@layout/fragment_pickup">
+    <action
+        android:id="@+id/action_homeFragment_to_pickupFragment"
+        app:destination="@id/editProfileFragment"
+        app:enterAnim="@anim/slide_in_up"
+        app:popEnterAnim="@anim/pop_up_enter"/>
+    </fragment>
 
 
 

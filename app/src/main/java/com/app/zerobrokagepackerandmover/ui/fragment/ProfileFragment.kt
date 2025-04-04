@@ -1,5 +1,6 @@
 package com.app.zerobrokagepackerandmover.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.app.zerobrokagepackerandmover.R
 import com.app.zerobrokagepackerandmover.databinding.FragmentProfileBinding
+import com.app.zerobrokagepackerandmover.ui.activity.LanguageActivity
 
 
 class ProfileFragment : Fragment() {
@@ -33,6 +35,11 @@ class ProfileFragment : Fragment() {
 
         binding.tvAddGST.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
+        }
+
+        binding.tvLanguage.setOnClickListener {
+            val intent = Intent(requireActivity(), LanguageActivity::class.java)
+            startActivity(intent)
         }
 
         return binding.root

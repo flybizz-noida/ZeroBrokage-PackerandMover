@@ -1,5 +1,6 @@
 package com.app.zerobrokagepackerandmover.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,8 +24,13 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+
         binding.cdLocation.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_pickupFragment)
+            val fragmentB = PickupFragment()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment_activity_main, fragmentB)
+                .addToBackStack(null)
+                .commit()
         }
 
         return binding.root
