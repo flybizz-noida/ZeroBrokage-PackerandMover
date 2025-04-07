@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.app.zerobrokagepackerandmover.R
 import com.app.zerobrokagepackerandmover.databinding.FragmentProfileBinding
+import com.app.zerobrokagepackerandmover.ui.activity.EditProfileActivity
 import com.app.zerobrokagepackerandmover.ui.activity.LanguageActivity
 
 
@@ -23,9 +24,8 @@ class ProfileFragment : Fragment() {
 
 
         binding.tvEditProfile.setOnClickListener {
-                findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
-
-
+            val intent = Intent(requireActivity(), EditProfileActivity::class.java)
+            startActivity(intent)
         }
 
         binding.tvLogout.setOnClickListener {
@@ -34,7 +34,8 @@ class ProfileFragment : Fragment() {
         }
 
         binding.tvAddGST.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
+            val intent = Intent(requireContext(), EditProfileActivity::class.java)
+            startActivity(intent)
         }
 
         binding.tvLanguage.setOnClickListener {

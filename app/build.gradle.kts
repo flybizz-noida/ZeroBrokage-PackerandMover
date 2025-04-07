@@ -53,4 +53,23 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //Country Picker
+    implementation ("com.hbb20:ccp:2.7.3")
+    implementation ("io.github.chaosleung:pinview:1.4.4")
+
+    //Otp View
+    implementation ("com.github.aabhasr1:OtpView:v1.1.2-ktx")
+
+    //Map
+
+    //OlaMap SDK
+    implementation(files("libs/OlaMapSdk-1.0.0.aar"))
+
+//Maplibre
+    implementation ("org.maplibre.gl:android-sdk:10.0.2")
+    implementation ("org.maplibre.gl:android-plugin-annotation-v9:1.0.0")
+    implementation ("org.maplibre.gl:android-plugin-markerview-v9:1.0.0")
+
+
 }

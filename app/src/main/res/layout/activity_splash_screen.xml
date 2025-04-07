@@ -5,31 +5,48 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/status_Color"
     tools:context=".ui.activity.SplashScreenActivity">
 
+
+    <TextView
+        android:id="@+id/tvZero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:fontFamily="@font/aller_bdit"
+        android:gravity="center"
+        android:text="Zero Brokage"
+        android:textColor="@color/appcolor"
+        android:textSize="40sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
 
     <TextView
         android:id="@+id/tvPacker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
+        android:fontFamily="@font/aller_bdit"
         android:gravity="center"
         android:text="Packer and Mover"
-        android:fontFamily="@font/aller_bdit"
         android:textColor="@color/nav_color"
         android:textSize="40sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/tvZero"
+        app:layout_constraintStart_toStartOf="@id/tvZero"
+        app:layout_constraintTop_toBottomOf="@id/tvZero" />
 
     <ImageView
         android:id="@+id/ivLocation"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/location"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tvPacker"
         app:layout_constraintStart_toEndOf="@id/tvPacker"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/tvPacker" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
