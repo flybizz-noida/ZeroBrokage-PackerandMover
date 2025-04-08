@@ -2,6 +2,7 @@ package com.app.zerobrokagepackerandmover.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -22,9 +23,35 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.btGetOtp.setOnClickListener {
-            val intent = Intent(this, OtpActivity::class.java)
-            startActivity(intent)
-            finish()
+            val countryCode = binding.countryPeaker.selectedCountryCodeWithPlus
+            val mobileNumber = binding.etMobileNumber.text.toString()
+
+            if (validateInputs(mobileNumber, countryCode)) {
+                // binding.btGetOtp.isEnabled = false
+
+
+                val intent = Intent(this, OtpActivity::class.java)
+                intent.putExtra("mobileNumber", mobileNumber)
+                intent.putExtra("countryCode", countryCode)
+                startActivity(intent)
+
+            }
         }
+
+
+    }
+    private fun validateInputs(mobileNumber : String, countryCode: String): Boolean {
+
+        if (mobileNumber.length != 10 || !mobileNumber.all { it.isDigit() }) {
+            Toast.makeText(this, "Please enter a valid mobile number.", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        if (countryCode.isEmpty() || !countryCode.startsWith("+")) {
+            Toast.makeText(this, "Please select a valid country code.", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        return true
     }
 }
+
+

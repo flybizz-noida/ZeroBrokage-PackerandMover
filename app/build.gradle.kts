@@ -63,13 +63,22 @@ dependencies {
 
     //Map
 
+
+
+    implementation ("com.google.android.material:material:1.11.0")
     //OlaMap SDK
-    implementation(files("libs/OlaMapSdk-1.0.0.aar"))
+    implementation(files("libs/olamaps.aar"))
 
 //Maplibre
     implementation ("org.maplibre.gl:android-sdk:10.0.2")
     implementation ("org.maplibre.gl:android-plugin-annotation-v9:1.0.0")
     implementation ("org.maplibre.gl:android-plugin-markerview-v9:1.0.0")
+
+    // Retrofit for networking
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+
+// Converter for JSON (using Gson)
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
 
 
 }

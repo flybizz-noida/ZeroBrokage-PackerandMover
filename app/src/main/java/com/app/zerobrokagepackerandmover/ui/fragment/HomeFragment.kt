@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.app.zerobrokagepackerandmover.R
 import androidx.navigation.fragment.findNavController
 import com.app.zerobrokagepackerandmover.databinding.FragmentHomeBinding
+import com.app.zerobrokagepackerandmover.ui.activity.PickupLocationActivity
 
 class HomeFragment : Fragment() {
 
@@ -26,11 +27,15 @@ class HomeFragment : Fragment() {
 
 
         binding.cdLocation.setOnClickListener {
-            val fragmentB = PickupFragment()
+
+            val intent = Intent(requireActivity(), PickupLocationActivity::class.java)
+            startActivity(intent)
+
+            /*val fragmentB = PickupFragment()
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.nav_host_fragment_activity_main, fragmentB)
                 .addToBackStack(null)
-                .commit()
+                .commit()*/
         }
 
         return binding.root

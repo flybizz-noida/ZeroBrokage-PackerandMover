@@ -7,6 +7,7 @@ import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.app.zerobrokagepackerandmover.MainActivity
 import com.app.zerobrokagepackerandmover.R
 import com.app.zerobrokagepackerandmover.databinding.ActivitySplashScreenBinding
 
@@ -23,7 +24,7 @@ class SplashScreenActivity : AppCompatActivity() {
         }
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }, 2000)

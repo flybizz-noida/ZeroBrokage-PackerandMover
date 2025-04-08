@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.PickupFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardProfile"
@@ -38,12 +38,12 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginVertical="10dp"
                 android:src="@drawable/ic_green"
-                app:layout_constraintBottom_toBottomOf="@id/svSearch"
+                app:layout_constraintBottom_toBottomOf="@id/etSearch"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/svSearch" />
+                app:layout_constraintTop_toTopOf="@id/etSearch" />
 
             <EditText
-                android:id="@+id/svSearch"
+                android:id="@+id/etSearch"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_margin="15dp"
@@ -61,12 +61,11 @@
                 android:layout_marginVertical="10dp"
                 android:fontFamily="@font/aller_lt"
                 android:text="Type at least characters to start searchin"
-                app:layout_constraintTop_toBottomOf="@id/svSearch"
-                app:layout_constraintStart_toStartOf="@id/svSearch"/>
+                app:layout_constraintTop_toBottomOf="@id/etSearch"
+                app:layout_constraintStart_toStartOf="@id/etSearch"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardLocation"

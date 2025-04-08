@@ -13,6 +13,12 @@ class OtpActivity : AppCompatActivity() {
         binding = ActivityOtpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val mobileNumber = intent.getStringExtra("mobileNumber")
+        val countryCode = intent.getStringExtra("countryCode")
+
+        binding.tvTextMobileNumber.text = "$countryCode $mobileNumber"
+
+
         binding.btVerify.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
