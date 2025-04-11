@@ -1,10 +1,9 @@
 package com.app.zerobrokagepackerandmover.olaModel
 
-data class OlaMapResponse( val suggestions: List<Suggestion>
+data class OlaMapResponse(
+    val predictions: List<Prediction>
 )
 
-data class Suggestion(
-    val name: String,
-    val latitude: Double,
-    val longitude: Double
+data class Prediction(
+    val description: String
 )

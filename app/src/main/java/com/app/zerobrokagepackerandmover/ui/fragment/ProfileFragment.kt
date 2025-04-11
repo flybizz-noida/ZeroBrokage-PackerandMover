@@ -39,9 +39,11 @@ class ProfileFragment : Fragment() {
         }
 
         binding.tvLanguage.setOnClickListener {
-            val intent = Intent(requireActivity(), LanguageActivity::class.java)
-            startActivity(intent)
+            val logoutBottomSheet = ChooseTruckFragment()
+            logoutBottomSheet.show(parentFragmentManager, "ChooseTruckFragment")
         }
+
+        binding.tvAppVersion.text = "App Version 1.0"
 
         return binding.root
     }
