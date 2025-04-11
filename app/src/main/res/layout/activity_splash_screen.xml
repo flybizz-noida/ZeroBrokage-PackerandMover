@@ -5,31 +5,94 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/status_Color"
     tools:context=".ui.activity.SplashScreenActivity">
 
+
+    <TextView
+        android:id="@+id/tvZero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:fontFamily="@font/aller_bd"
+        android:gravity="center"
+        android:text="Zero Brokage"
+        android:textColor="@color/appcolor"
+        android:textSize="40sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.100000024" />
 
     <TextView
         android:id="@+id/tvPacker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
+        android:fontFamily="@font/aller_bd"
         android:gravity="center"
-        android:rotationX="15"
-        android:text="Packer and Mover"
+        android:text="Packers and Movers"
         android:textColor="@color/nav_color"
-        android:textSize="40sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="38sp"
+        app:layout_constraintEnd_toEndOf="@id/tvZero"
+        app:layout_constraintStart_toStartOf="@id/tvZero"
+        app:layout_constraintTop_toBottomOf="@id/tvZero" />
 
     <ImageView
         android:id="@+id/ivLocation"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/location"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tvPacker"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvPacker"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/tvPacker" />
+
+    <ImageView
+        android:id="@+id/ivSplash"
+        android:layout_width="328dp"
+        android:layout_height="351dp"
+        app:layout_constraintEnd_toEndOf="@id/tvPacker"
+        app:layout_constraintStart_toStartOf="@id/tvPacker"
+        app:layout_constraintTop_toBottomOf="@id/tvPacker"
+        app:srcCompat="@drawable/splash" />
+
+    <TextView
+        android:id="@+id/tvhundred"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aller_rg"
+        android:text="100%"
+        android:textColor="@color/virgin_america"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="@id/ivSplash"
+        app:layout_constraintStart_toStartOf="@id/ivSplash"
+        app:layout_constraintTop_toBottomOf="@id/ivSplash" />
+
+    <TextView
+        android:id="@+id/tvDamage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aller_bd"
+        android:text="Damage Free"
+        android:textColor="@color/yellow"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="@id/ivSplash"
+        app:layout_constraintStart_toStartOf="@id/ivSplash"
+        app:layout_constraintTop_toBottomOf="@id/tvhundred" />
+
+    <TextView
+        android:id="@+id/tvHouse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:fontFamily="@font/aller_bd"
+        android:text="House Shifting"
+        android:textColor="@color/dusk"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@id/ivSplash"
+        app:layout_constraintStart_toStartOf="@id/ivSplash"
+        app:layout_constraintTop_toBottomOf="@id/tvDamage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

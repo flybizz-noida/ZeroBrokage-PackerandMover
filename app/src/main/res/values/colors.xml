@@ -5,17 +5,25 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+
+    <color name="yellow">#FFD428</color>
+
+
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#D9D9D9</color>
+    <color name="appcolor">#43a047</color>
+    <color name="btn_black">#312E21</color>
+    <color name="gray_text_color">#737373</color>
+    <color name="light_gray">#0F737373</color>
+    <color name="green">#34A853</color>
 
     <color name="splashColor">#73C7A2</color>
     <color name="strokeColor">#C2F697</color>
     <color name="titleColor">#6CB1DB</color>
     <color name="status_Color">#F4FAFD</color>
-    <color name="searchText">#AEB0B1</color>
-    <color name="gray">#A2A0A0</color>
     <color name="nav_color">#004572</color>
-    <color name="green">#3B9E34</color>
 
 
     <color name="pink">#B9DB72BD</color>

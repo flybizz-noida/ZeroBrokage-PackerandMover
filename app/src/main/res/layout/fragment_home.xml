@@ -38,7 +38,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pick up from"
-                android:textStyle="bold"
+                android:fontFamily="@font/aller_bd"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@id/ivLocation"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,6 +50,7 @@
                 android:ellipsize="end"
                 android:gravity="start"
                 android:maxLines="1"
+                android:fontFamily="@font/aller_rg"
                 android:text="Noida Sector 63 stgyrtytryyryu hrtfghyrhyrh tyytyt"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/ivDropDown"

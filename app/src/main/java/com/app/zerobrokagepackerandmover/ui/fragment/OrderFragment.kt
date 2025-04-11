@@ -22,6 +22,8 @@ class OrderFragment : Fragment() {
         _binding = FragmentOrderBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        binding.toolbar.tvHeading.visibility = View.VISIBLE
+        binding.toolbar.tvHeading.text = "Orders"
 
         return root
     }

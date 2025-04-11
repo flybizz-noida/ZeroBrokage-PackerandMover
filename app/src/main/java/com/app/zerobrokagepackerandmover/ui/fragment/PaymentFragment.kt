@@ -10,7 +10,6 @@ import com.app.zerobrokagepackerandmover.databinding.FragmentPaymentBinding
 class PaymentFragment : Fragment() {
 
     private var _binding: FragmentPaymentBinding? = null
-
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,10 +18,8 @@ class PaymentFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-
         _binding = FragmentPaymentBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
 
         return root
     }
