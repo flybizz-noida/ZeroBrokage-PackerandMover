@@ -1,111 +1,115 @@
 package com.app.zerobrokagepackerandmover.ui.activity
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.location.Geocoder
+import android.location.LocationManager
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.DrawableCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.app.zerobrokagepackerandmover.R
 import com.app.zerobrokagepackerandmover.databinding.ActivityCurrentLocationBinding
-import com.mapbox.mapboxsdk.camera.CameraUpdateFactory
 import com.mapbox.mapboxsdk.utils.BitmapUtils
 import com.ola.mapsdk.interfaces.OlaMapCallback
 import com.ola.mapsdk.model.OlaLatLng
 import com.ola.mapsdk.model.OlaMarkerOptions
 import com.ola.mapsdk.view.OlaMap
-import com.ola.mapsdk.view.OlaMapView
+import java.util.Locale
 
 class CurrentLocationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCurrentLocationBinding
-    private lateinit var mapView: OlaMapView
+    private var olaMap: OlaMap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCurrentLocationBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        binding.ivBack.setOnClickListener { finish() }
+
+        if (checkLocationPermission()) {
+            loadMap()
+        } else {
+            requestLocationPermission()
+        }
+    }
+
+    private fun loadMap() {
+        if (!isLocationEnabled()) {
+            Toast.makeText(this, "Please enable location", Toast.LENGTH_SHORT).show()
+            return
         }
 
-        binding.ivBack.setOnClickListener {
-            finish()
-        }
+        binding.mapView.getMap("vPTVozNFgPqkmRvpIAiCzuoKZkiKu3HO1Nd7ilDU", object : OlaMapCallback {
 
-        binding.mapView.getMap(
-            apiKey = "vPTVozNFgPqkmRvpIAiCzuoKZkiKu3HO1Nd7ilDU",
-            olaMapCallback = object : OlaMapCallback {
 
-                override fun onMapReady(olaMap: OlaMap) {
+            override fun onMapReady(map: OlaMap) {
+                olaMap = map
 
-                    val vectorDrawable = ContextCompat.getDrawable(
-                        this@CurrentLocationActivity,
-                        R.drawable.ic_marker
-                    )!!
-                    val tintedDrawable = DrawableCompat.wrap(vectorDrawable)
-                    DrawableCompat.setTint(
-                        tintedDrawable,
-                        ContextCompat.getColor(this@CurrentLocationActivity, R.color.appcolor)
-                    )
+                Handler(Looper.getMainLooper()).postDelayed({
+                    val location = olaMap?.getCurrentLocation()
+                    if (location != null) {
+                        val currentLatLng = OlaLatLng(location.latitude, location.longitude, 0.0)
 
-                    val bitmap = BitmapUtils.getBitmapFromDrawable(tintedDrawable)
+                        val drawable = ContextCompat.getDrawable(this@CurrentLocationActivity, R.drawable.ic_marker)
+                        val bitmap = BitmapUtils.getBitmapFromDrawable(drawable!!)
+                        val markerOptions = OlaMarkerOptions.Builder()
+                            .setMarkerId("current")
+                            .setPosition(currentLatLng)
+                            .setIconBitmap(bitmap!!)
+                            .build()
 
-                    val olaPoint = OlaLatLng(28.61666204395904, 77.39012187353822)
+                        olaMap?.addMarker(markerOptions)
+                        olaMap?.moveCameraToLatLong(currentLatLng, 15.0, 2000)
 
-                    val markerOptions1 = OlaMarkerOptions.Builder()
-                        .setMarkerId("marker1")
-                        .setPosition(olaPoint)
-                        .setIconBitmap(bitmap!!)
-                        .setIconSize(2.5f)
-                        .setIsIconClickable(true)
-                        .setIconRotation(0f)
-                        .setIsAnimationEnable(true)
-                        .setIsInfoWindowDismissOnClick(true)
-                        .build()
-
-                    val marker1 = olaMap.addMarker(markerOptions1)
-
-                   /* binding.ivZoomin.setOnClickListener {
-                        mapView.animateCamera(CameraUpdateFactory.zoomIn())
+                        binding.tvLocation.text = getAddressFromLatLng(currentLatLng.latitude, currentLatLng.longitude)
+                    } else {
+                        Toast.makeText(this@CurrentLocationActivity, "Unable to get current location", Toast.LENGTH_SHORT).show()
                     }
-
-                    binding.ivZoomout.setOnClickListener {
-                        mapView.animateCamera(CameraUpdateFactory.zoomOut())
-                    }*/
-
-                    /*binding.mapOverlay.setOnTouchListener { v, event ->
-                        if (event.action == MotionEvent.ACTION_UP) {
-                            val screenX = event.x.toInt()
-                            val screenY = event.y.toInt()
-
-                            // Convert screen point to OlaLatLng
-                            val tappedLatLng = olaMap.getLatLngFromScreenLocation(screenX, screenY)
-
-                            if (tappedLatLng != null) {
-                                 marker?.setPosition(tappedLatLng)
-                                updateLocationText(tappedLatLng)
-                            }
-                        }
-                        true
-                    }*/
-
-                    Handler(Looper.getMainLooper()).postDelayed({
-                        olaMap.moveCameraToLatLong(olaPoint, 18.0, 2000)
-                    }, 2000)
-                }
-
-                override fun onMapError(error: String) {
-                    Toast.makeText(this@CurrentLocationActivity, "Server Error", Toast.LENGTH_SHORT)
-                        .show()
-                }
+                }, 3000)
             }
-        )
+            override fun onMapError(error: String) {
+                Toast.makeText(this@CurrentLocationActivity, "Map error: $error", Toast.LENGTH_SHORT).show()
 
+            }
+
+        })
+    }
+
+    private fun getAddressFromLatLng(lat: Double, lng: Double): String {
+        return try {
+            val geocoder = Geocoder(this, Locale.getDefault())
+            val addresses = geocoder.getFromLocation(lat, lng, 1)
+            addresses?.firstOrNull()?.getAddressLine(0) ?: "$lat, $lng"
+        } catch (e: Exception) {
+            "$lat, $lng"
+        }
+    }
+
+    private fun checkLocationPermission(): Boolean {
+        return ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun requestLocationPermission() {
+        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 101)
+    }
+
+    private fun isLocationEnabled(): Boolean {
+        val locationManager = getSystemService(LOCATION_SERVICE) as LocationManager
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 101 && grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            loadMap()
+        } else {
+            Toast.makeText(this, "Location permission denied", Toast.LENGTH_SHORT).show()
+        }
     }
 }
