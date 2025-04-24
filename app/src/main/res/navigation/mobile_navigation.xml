@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.app.zerobrokagepackerandmover.ui.fragment.HomeFragment"
+        android:name="com.app.zerobrokagepackersandmovers.ui.fragment.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home">
     <action
@@ -19,18 +19,18 @@
 
     <fragment
         android:id="@+id/nav_order"
-        android:name="com.app.zerobrokagepackerandmover.ui.fragment.OrderFragment"
+        android:name="com.app.zerobrokagepackersandmovers.ui.fragment.OrderFragment"
         android:label="Order"
         tools:layout="@layout/fragment_order" />
 
     <fragment
         android:id="@+id/nav_payment"
-        android:name="com.app.zerobrokagepackerandmover.ui.fragment.PaymentFragment"
+        android:name="com.app.zerobrokagepackersandmovers.ui.fragment.PaymentFragment"
         android:label="Payment"
         tools:layout="@layout/fragment_payment" />
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.app.zerobrokagepackerandmover.ui.fragment.ProfileFragment"
+        android:name="com.app.zerobrokagepackersandmovers.ui.fragment.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile">
     <action
@@ -41,12 +41,12 @@
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
-        android:name="com.app.zerobrokagepackerandmover.ui.fragment.EditProfileFragment"
+        android:name="com.app.zerobrokagepackersandmovers.ui.fragment.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" />
     <fragment
         android:id="@+id/pickupFragment"
-        android:name="com.app.zerobrokagepackerandmover.ui.fragment.PickupFragment"
+        android:name="com.app.zerobrokagepackersandmovers.ui.fragment.PickupFragment"
         android:label="fragment_pickup"
         tools:layout="@layout/fragment_pickup">
     <action

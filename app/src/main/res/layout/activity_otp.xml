@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.OtpActivity">
 
-
     <View
         android:layout_width="220dp"
         android:layout_height="195dp"
@@ -52,7 +51,6 @@
         app:layout_constraintStart_toStartOf="@+id/appCompatTextView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-
     <in.aabhasjindal.otptextview.OtpTextView
         android:id="@+id/otp_view"
         android:layout_width="wrap_content"
@@ -66,7 +64,6 @@
         app:length="4"
         app:otp_text_size="24dp" />
 
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btVerify"
         android:layout_width="0dp"
@@ -74,11 +71,9 @@
         android:layout_marginTop="50dp"
         android:background="@drawable/shape_edit_text"
         android:text="Verify"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/otp_view"
         app:layout_constraintStart_toStartOf="@id/otp_view"
         app:layout_constraintEnd_toEndOf="@id/otp_view"/>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

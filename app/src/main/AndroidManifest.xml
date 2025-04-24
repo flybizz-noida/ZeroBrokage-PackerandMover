@@ -5,7 +5,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
 
 
     <application
@@ -19,13 +21,11 @@
         android:theme="@style/Theme.ZeroBrokagePackerMover"
         tools:targetApi="31">
 
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/logo" />
+
 
         <meta-data
-            android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/nav_color" />
+            android:name="com.olacabs.maps.API_KEY"
+            android:value="ZqO2BstG4Lh4MeY1ybKMUCHBzmE6kv6T0bL2uYv6" />
 
         <activity
             android:name=".ui.activity.PickupLocationActivity"
@@ -50,14 +50,14 @@
             </intent-filter>
         </activity>
 
-        <service
+       <!-- <service
             android:name=".MyFirebaseMessagingService"
             android:exported="false"
             tools:ignore="Instantiatable">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-        </service>
+        </service>-->
         <activity
             android:name=".ui.activity.OtpActivity"
             android:exported="false" />

@@ -98,6 +98,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/shape_edit_text"
         android:text="Login"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@id/phone_input_layout"
         app:layout_constraintStart_toStartOf="@id/phone_input_layout"
         app:layout_constraintTop_toBottomOf="@id/cbWhatapps" />

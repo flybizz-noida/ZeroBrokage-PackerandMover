@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.app.zerobrokagepackerandmover"
+    namespace = "com.app.zerobrokagepackersandmovers"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.app.zerobrokagepackerandmover"
+        applicationId = "com.app.zerobrokagepackersandmovers"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -79,10 +79,13 @@ dependencies {
     //OlaMap SDK
     implementation(files("libs/olamaps.aar"))
 
+
 //Maplibre
     implementation("org.maplibre.gl:android-sdk:10.0.2")
     implementation("org.maplibre.gl:android-plugin-annotation-v9:1.0.0")
     implementation("org.maplibre.gl:android-plugin-markerview-v9:1.0.0")
+
+    implementation ("com.google.android.gms:play-services-location:21.0.1")
 
     // Retrofit for networking
     implementation("com.squareup.retrofit2:retrofit:2.9.0")

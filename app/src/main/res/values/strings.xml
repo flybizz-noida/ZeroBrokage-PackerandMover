@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">ZeroBrokage Packer Mover</string>
+    <string name="app_name">ZeroBrokage Packers and  Movers</string>
     <string name="title_home">Home</string>
     <string name="AppVersion">1.0</string>
     <string name="hello">Hello,How are You</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
