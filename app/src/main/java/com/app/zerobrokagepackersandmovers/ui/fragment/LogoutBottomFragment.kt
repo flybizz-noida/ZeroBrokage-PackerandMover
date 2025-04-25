@@ -42,7 +42,6 @@ class LogoutBottomFragment : BottomSheetDialogFragment() {
         binding.btNo.setOnClickListener {
             dismiss()
         }
-
         return binding.root
     }
 

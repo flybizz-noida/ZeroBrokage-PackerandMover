@@ -56,6 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="30dp"
+        android:focusableInTouchMode="true"
         android:textColor="@color/green"
         app:bar_enabled="true"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,8 +73,8 @@
         android:background="@drawable/shape_edit_text"
         android:text="Verify"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/otp_view"
+        app:layout_constraintEnd_toEndOf="@id/otp_view"
         app:layout_constraintStart_toStartOf="@id/otp_view"
-        app:layout_constraintEnd_toEndOf="@id/otp_view"/>
+        app:layout_constraintTop_toBottomOf="@id/otp_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -93,6 +93,9 @@ dependencies {
 // Converter for JSON (using Gson)
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
+    //Razorpay
+    implementation ("com.razorpay:checkout:1.6.33")
+
 
 
 

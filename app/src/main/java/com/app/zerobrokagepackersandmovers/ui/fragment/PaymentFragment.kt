@@ -1,17 +1,20 @@
 package com.app.zerobrokagepackersandmovers.ui.fragment
 
+import android.app.Activity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.app.zerobrokagepackersandmovers.R
 import com.app.zerobrokagepackersandmovers.adapter.PaymentPagerAdapter
 import com.app.zerobrokagepackersandmovers.databinding.FragmentPaymentBinding
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlin.text.clear
-import kotlin.toString
+import com.razorpay.Checkout
+import org.json.JSONObject
 
 class PaymentFragment : Fragment() {
 
@@ -27,45 +30,43 @@ class PaymentFragment : Fragment() {
         _binding = FragmentPaymentBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-
         binding.clearIcon.setOnClickListener {
-            binding.etSearchCountry.text?.clear()
+            binding.etAmountInput.text?.clear()
         }
 
         val amountTextViews = listOf(binding.tvFi, binding.tvOne, binding.tvFive, binding.tvTen)
-
         for (textView in amountTextViews) {
             textView.setOnClickListener {
                 val value = textView.text.toString().replace("+₹", "")
-                val currentText = binding.etSearchCountry.text.toString()
-
-                if (currentText.startsWith("0")) {
-                    binding.etSearchCountry.setText(value)
-                } else {
-                    binding.etSearchCountry.setText(value)
-                }
-                binding.etSearchCountry.setSelection(binding.etSearchCountry.text?.length ?: 0)
+                binding.etAmountInput.setText(value)
+                binding.etAmountInput.setSelection(value.length)
             }
         }
 
-        binding.etSearchCountry.addTextChangedListener(object : TextWatcher {
+        binding.etAmountInput.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-
             override fun afterTextChanged(s: Editable?) {
                 val text = s.toString()
                 if (text.length > 1 && text.startsWith("0")) {
                     val newText = text.trimStart('0')
-                    binding.etSearchCountry.setText(newText)
-                    binding.etSearchCountry.setSelection(newText.length)
+                    binding.etAmountInput.setText(newText)
+                    binding.etAmountInput.setSelection(newText.length)
                 }
             }
         })
 
         binding.btAddMoney.setOnClickListener {
+            val priceText = binding.etAmountInput.text.toString().trim()
+            val price = priceText.toIntOrNull()
 
+            if (price == null || price <= 0) {
+                Toast.makeText(requireContext(), "Please enter a valid amount", Toast.LENGTH_SHORT)
+                    .show()
+                return@setOnClickListener
+            }
 
+            startPayment(price, requireActivity())
         }
 
         binding.tvAddMoney.setOnClickListener {
@@ -74,8 +75,6 @@ class PaymentFragment : Fragment() {
             binding.tlTabLayout.visibility = View.GONE
         }
 
-
-
         binding.viewPager.adapter = PaymentPagerAdapter(this)
 
         TabLayoutMediator(binding.tlTabLayout, binding.viewPager) { tab, position ->
@@ -83,6 +82,36 @@ class PaymentFragment : Fragment() {
         }.attach()
 
         return root
+    }
+
+    private fun startPayment(price: Int, activity: Activity) {
+        val checkout = Checkout()
+        checkout.setKeyID("rzp_live_xGE6LiwuMeIenF")
+        checkout.setImage(R.drawable.logo)
+
+        try {
+            val options = JSONObject().apply {
+                put("name", "Zero Brokage Packers and Movers")
+                put("description", "Payment Order")
+                put("image", "https://logistic.zerobrokage.com/img/zerobrokagepackermover.png")
+                put("theme.color", "#3399cc")
+                put("currency", "INR")
+                put("amount", price * 100)
+
+                val userContact = "9838166666"
+                put("prefill", JSONObject().put("contact", userContact))
+
+                val retryObj = JSONObject().apply {
+                    put("enabled", true)
+                    put("max_count", 5)
+                }
+                put("retry", retryObj)
+            }
+
+            checkout.open(activity, options)
+        } catch (e: Exception) {
+            Toast.makeText(activity, "Error in Razorpay Checkout", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onDestroyView() {

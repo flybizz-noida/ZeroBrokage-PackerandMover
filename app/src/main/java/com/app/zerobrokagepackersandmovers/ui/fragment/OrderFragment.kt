@@ -10,7 +10,6 @@ import com.app.zerobrokagepackersandmovers.databinding.FragmentOrderBinding
 class OrderFragment : Fragment() {
 
     private var _binding: FragmentOrderBinding? = null
-
     private val binding get() = _binding!!
 
     override fun onCreateView(

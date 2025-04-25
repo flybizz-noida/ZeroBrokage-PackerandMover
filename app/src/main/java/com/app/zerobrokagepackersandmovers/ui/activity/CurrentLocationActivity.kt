@@ -2,27 +2,16 @@ package com.app.zerobrokagepackersandmovers.ui.activity
 
 
 import android.Manifest
-import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
-import android.location.Location
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.widget.Toast
 import androidx.annotation.RequiresPermission
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.app.zerobrokagepackersandmovers.R
 import com.app.zerobrokagepackersandmovers.databinding.ActivityCurrentLocationBinding
 import com.google.android.gms.location.*
-import com.mapbox.mapboxsdk.utils.BitmapUtils
-import com.ola.mapsdk.interfaces.OlaMapCallback
-import com.ola.mapsdk.model.OlaLatLng
-import com.ola.mapsdk.model.OlaMarkerOptions
 import com.ola.mapsdk.view.OlaMap
 import com.ola.mapsdk.view.OlaMapView
 import java.util.Locale
@@ -128,8 +117,8 @@ class CurrentLocationActivity : AppCompatActivity() {
         try {
             val addresses: MutableList<Address>? = geocoder.getFromLocation(lat, lng, 1)
             if (addresses?.isNotEmpty() == true) {
-                val address = addresses?.get(0)
-                return "${address?.getAddressLine(0)}"
+                val address = addresses.get(0)
+                return "${address.getAddressLine(0)}"
             }
         } catch (e: Exception) {
             e.printStackTrace()

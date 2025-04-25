@@ -13,7 +13,8 @@ class HomeAdapter(private val itemList: List<HomeItems>) :
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
-        val binding = ServicesLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ServicesLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return HomeViewHolder(binding)
     }
 

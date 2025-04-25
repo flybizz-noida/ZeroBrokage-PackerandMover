@@ -109,7 +109,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tvTitle">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etSearchCountry"
+                    android:id="@+id/etAmountInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_cr"
