@@ -65,6 +65,32 @@
         app:length="4"
         app:otp_text_size="24dp" />
 
+
+    <TextView
+        android:id="@+id/tvResend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resend Otp:"
+        android:textColor="@color/sea_blue"
+        android:textStyle="bold"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/otp_view" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="00:00"
+        android:textColor="@color/red_orange"
+        app:layout_constraintStart_toEndOf="@id/tvResend"
+        app:layout_constraintTop_toTopOf="@id/tvResend"
+        app:layout_constraintEnd_toEndOf="@id/otp_view"
+        app:layout_constraintBottom_toBottomOf="@id/tvResend"/>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btVerify"
         android:layout_width="0dp"
