@@ -90,5 +90,10 @@ dependencies {
 // Converter for JSON (using Gson)
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
+    //pin view and country code
+
+    implementation("com.hbb20:ccp:2.7.2")
+    implementation("io.github.chaosleung:pinview:1.4.4")
+
 
 }

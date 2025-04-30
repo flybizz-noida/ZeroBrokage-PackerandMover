@@ -1,7 +1,7 @@
 package com.app.zerobrokagepackerandmover.ui.activity
 
-import android.os.Bundle
 import android.content.Intent
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
@@ -23,11 +23,21 @@ class SplashScreenActivity : AppCompatActivity() {
             insets
         }
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }, 2000)
+        val sharedPref = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+        val isLoggedIn = sharedPref.getBoolean("isLoggedIn", false)
 
+        Handler(Looper.getMainLooper()).postDelayed({
+            navigateToNextScreen(isLoggedIn)
+        }, 2000)
     }
+
+    private fun navigateToNextScreen(isLoggedIn: Boolean) {
+        if (isLoggedIn) {
+            startActivity(Intent(this, MainActivity::class.java))
+        } else {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+        finish()
+    }
+
 }

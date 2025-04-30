@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.OtpActivity">
 
-
     <View
         android:layout_width="220dp"
         android:layout_height="195dp"
@@ -52,20 +51,23 @@
         app:layout_constraintStart_toStartOf="@+id/appCompatTextView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-
-    <in.aabhasjindal.otptextview.OtpTextView
+    <com.chaos.view.PinView
         android:id="@+id/otp_view"
+        style="@style/PinWidget.PinView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="30dp"
-        android:textColor="@color/green"
-        app:bar_enabled="true"
+        android:layout_marginTop="10dp"
+        android:cursorVisible="true"
+        android:gravity="center"
+        android:inputType="numberPassword"
+        android:lines="@integer/material_motion_duration_long_1"
+        android:padding="5dp"
+        app:hideLineWhenFilled="true"
+        app:itemRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTextMobileNumber"
-        app:length="4"
-        app:otp_text_size="24dp" />
-
+        app:lineColor="@color/appcolor" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btVerify"
@@ -74,11 +76,9 @@
         android:layout_marginTop="50dp"
         android:background="@drawable/shape_edit_text"
         android:text="Verify"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/otp_view"
         app:layout_constraintStart_toStartOf="@id/otp_view"
         app:layout_constraintEnd_toEndOf="@id/otp_view"/>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
