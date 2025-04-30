@@ -15,7 +15,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.zerobrokagepackersandmovers.R
 import com.app.zerobrokagepackersandmovers.adapter.HomeAdapter
 import com.app.zerobrokagepackersandmovers.data.HomeItems
@@ -23,7 +22,7 @@ import com.app.zerobrokagepackersandmovers.databinding.FragmentHomeBinding
 import com.app.zerobrokagepackersandmovers.ui.activity.PickupLocationActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import java.util.*
+import java.util.Locale
 
 class HomeFragment : Fragment() {
 
@@ -78,7 +77,7 @@ class HomeFragment : Fragment() {
         )
 
         val adapter = HomeAdapter(homeItems)
-        binding.rvServices.layoutManager = GridLayoutManager(context,2)
+        binding.rvServices.layoutManager = GridLayoutManager(context, 2)
         binding.rvServices.adapter = adapter
 
 
@@ -127,7 +126,7 @@ class HomeFragment : Fragment() {
                 binding.tvLocation.text = "Location not available"
             }
         }
-        
+
         binding.cdBookingStatus.btnView.setOnClickListener {
             Toast.makeText(context, "View", Toast.LENGTH_SHORT).show()
         }

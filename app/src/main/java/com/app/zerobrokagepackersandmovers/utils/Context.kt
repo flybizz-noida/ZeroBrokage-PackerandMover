@@ -2,7 +2,7 @@ package com.app.zerobrokagepackersandmovers.utils
 
 
 import android.content.Context
-import java.util.*
+import java.util.Locale
 
 fun Context.setAppLocale(language: String) {
     val locale = Locale(language)

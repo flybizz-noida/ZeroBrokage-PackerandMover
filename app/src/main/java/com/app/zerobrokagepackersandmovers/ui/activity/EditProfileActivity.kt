@@ -40,15 +40,19 @@ class EditProfileActivity : AppCompatActivity() {
         binding.spGST.adapter = adapter
 
         binding.spGST.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
                 val reason = reasonList[position]
 
                 if (reason == "Available") {
                     binding.etGstIn.visibility = View.VISIBLE
                     binding.etNameofBusiness.visibility = View.VISIBLE
                     binding.etBusinessAddress.visibility = View.VISIBLE
-                }
-                else {
+                } else {
                     binding.etGstIn.visibility = View.GONE
                     binding.etNameofBusiness.visibility = View.GONE
                     binding.etBusinessAddress.visibility = View.GONE

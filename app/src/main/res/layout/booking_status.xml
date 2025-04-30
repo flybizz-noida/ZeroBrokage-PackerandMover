@@ -17,118 +17,118 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Tracking ID: Track Id"
-            android:textStyle="bold"
             android:textColor="@android:color/black"
             android:textSize="16sp"
-            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imgMaterial"
             android:layout_width="16dp"
             android:layout_height="16dp"
+            android:layout_marginTop="8dp"
             android:src="@drawable/ic_items"
-            app:layout_constraintTop_toBottomOf="@id/tvTrackingId"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="8dp" />
+            app:layout_constraintTop_toBottomOf="@id/tvTrackingId" />
 
         <TextView
             android:id="@+id/tvMaterial"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:text="Materials"
             android:textSize="14sp"
-            app:layout_constraintTop_toTopOf="@id/imgMaterial"
-            app:layout_constraintStart_toEndOf="@id/imgMaterial"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginStart="8dp" />
+            app:layout_constraintStart_toEndOf="@id/imgMaterial"
+            app:layout_constraintTop_toTopOf="@id/imgMaterial" />
 
         <ImageView
             android:id="@+id/imgTruck"
             android:layout_width="16dp"
             android:layout_height="16dp"
+            android:layout_marginTop="8dp"
             android:src="@drawable/ic_truck"
-            app:layout_constraintTop_toBottomOf="@id/imgMaterial"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="8dp" />
+            app:layout_constraintTop_toBottomOf="@id/imgMaterial" />
 
         <TextView
             android:id="@+id/tvTruck"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:text="24,000 ton Truck"
             android:textSize="14sp"
-            app:layout_constraintTop_toTopOf="@id/imgTruck"
-            app:layout_constraintStart_toEndOf="@id/imgTruck"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginStart="8dp" />
+            app:layout_constraintStart_toEndOf="@id/imgTruck"
+            app:layout_constraintTop_toTopOf="@id/imgTruck" />
 
         <!-- Icon Row 3 -->
         <ImageView
             android:id="@+id/imgPickup"
             android:layout_width="16dp"
             android:layout_height="16dp"
+            android:layout_marginTop="8dp"
             android:src="@drawable/ic_green"
-            app:layout_constraintTop_toBottomOf="@id/imgTruck"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="8dp" />
+            app:layout_constraintTop_toBottomOf="@id/imgTruck" />
 
         <TextView
             android:id="@+id/tvPickup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:text="Pick it up from: Bogota"
             android:textSize="14sp"
-            app:layout_constraintTop_toTopOf="@id/imgPickup"
-            app:layout_constraintStart_toEndOf="@id/imgPickup"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginStart="8dp" />
+            app:layout_constraintStart_toEndOf="@id/imgPickup"
+            app:layout_constraintTop_toTopOf="@id/imgPickup" />
 
         <!-- Icon Row 4 -->
         <ImageView
             android:id="@+id/imgDelivery"
             android:layout_width="16dp"
             android:layout_height="16dp"
+            android:layout_marginTop="8dp"
             android:src="@drawable/ic_red"
-            app:layout_constraintTop_toBottomOf="@id/imgPickup"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="8dp" />
+            app:layout_constraintTop_toBottomOf="@id/imgPickup" />
 
         <TextView
             android:id="@+id/tvDelivery"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:text="Delivery to: Texas"
             android:textSize="14sp"
-            app:layout_constraintTop_toTopOf="@id/imgDelivery"
-            app:layout_constraintStart_toEndOf="@id/imgDelivery"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginStart="8dp" />
+            app:layout_constraintStart_toEndOf="@id/imgDelivery"
+            app:layout_constraintTop_toTopOf="@id/imgDelivery" />
 
         <!-- Buttons -->
         <Button
             android:id="@+id/btnView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:text="View"
             android:textColor="@android:color/white"
-            app:layout_constraintTop_toBottomOf="@id/tvDelivery"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="12dp" />
+            app:layout_constraintTop_toBottomOf="@id/tvDelivery" />
 
         <TextView
             android:id="@+id/btnStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="On Progress"
-            android:padding="10dp"
+            android:layout_marginStart="8dp"
             android:background="@color/endless_river"
+            android:padding="10dp"
+            android:text="On Progress"
             android:textColor="@android:color/white"
-            app:layout_constraintTop_toTopOf="@id/btnView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintWidth_percent="0.48"
-            android:layout_marginStart="8dp" />
+            app:layout_constraintTop_toTopOf="@id/btnView"
+            app:layout_constraintWidth_percent="0.48" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

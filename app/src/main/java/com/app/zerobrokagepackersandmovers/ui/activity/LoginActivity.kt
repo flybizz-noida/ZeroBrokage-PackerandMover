@@ -28,17 +28,12 @@ class LoginActivity : AppCompatActivity() {
 
             if (validateInputs(mobileNumber, countryCode)) {
                 // binding.btGetOtp.isEnabled = false
-
-
                 val intent = Intent(this, OtpActivity::class.java)
                 intent.putExtra("mobileNumber", mobileNumber)
                 intent.putExtra("countryCode", countryCode)
                 startActivity(intent)
-
             }
         }
-
-
     }
     private fun validateInputs(mobileNumber : String, countryCode: String): Boolean {
 

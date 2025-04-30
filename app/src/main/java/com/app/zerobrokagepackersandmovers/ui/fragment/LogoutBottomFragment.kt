@@ -3,7 +3,10 @@ package com.app.zerobrokagepackersandmovers.ui.fragment
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import android.view.*
+import android.view.KeyEvent
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import com.app.zerobrokagepackersandmovers.databinding.FragmentLogoutBottomBinding
 import com.app.zerobrokagepackersandmovers.ui.activity.LoginActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog

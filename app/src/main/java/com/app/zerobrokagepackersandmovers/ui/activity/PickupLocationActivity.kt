@@ -10,7 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.zerobrokagepackersandmovers.RetrofitInstance.RetrofitInstance
 import com.app.zerobrokagepackersandmovers.adapter.SuggestionAdapter
 import com.app.zerobrokagepackersandmovers.databinding.ActivityPickupLocationBinding
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class PickupLocationActivity : AppCompatActivity() {
 

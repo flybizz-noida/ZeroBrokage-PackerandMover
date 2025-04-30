@@ -6,7 +6,8 @@ import com.app.zerobrokagepackersandmovers.ui.fragment.CreditFragment
 import com.app.zerobrokagepackersandmovers.ui.fragment.DebitFragment
 import com.app.zerobrokagepackersandmovers.ui.fragment.PaymentFragment
 
-class PaymentPagerAdapter(fragmentActivity: PaymentFragment) : FragmentStateAdapter(fragmentActivity) {
+class PaymentPagerAdapter(fragmentActivity: PaymentFragment) :
+    FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount(): Int = 2
 
     override fun createFragment(position: Int): Fragment {

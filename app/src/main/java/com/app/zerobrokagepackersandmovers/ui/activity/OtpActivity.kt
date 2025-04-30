@@ -1,5 +1,6 @@
 package com.app.zerobrokagepackersandmovers.ui.activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -12,6 +13,7 @@ class OtpActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOtpBinding
     private lateinit var countDownTimer: CountDownTimer
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOtpBinding.inflate(layoutInflater)
@@ -21,8 +23,6 @@ class OtpActivity : AppCompatActivity() {
         val countryCode = intent.getStringExtra("countryCode")
 
         binding.tvTextMobileNumber.text = "$countryCode $mobileNumber"
-
-
         binding.btVerify.setOnClickListener {
 
             val otp = binding.otpView.otp.toString().trim()
@@ -45,17 +45,18 @@ class OtpActivity : AppCompatActivity() {
     private fun startTimer() {
         binding.tvResend.isEnabled = false
         countDownTimer = object : CountDownTimer(16000, 1000) {
+            @SuppressLint("DefaultLocale")
             override fun onTick(millisUntilFinished: Long) {
                 val seconds = (millisUntilFinished / 1000) % 60
                 val minutes = (millisUntilFinished / 1000) / 60
                 binding.timer.text = String.format("%02d:%02d", minutes, seconds)
             }
 
+            @SuppressLint("SetTextI18n")
             override fun onFinish() {
                 binding.timer.text = "Done!"
                 binding.tvResend.isEnabled = true
             }
         }.start()
     }
-
 }

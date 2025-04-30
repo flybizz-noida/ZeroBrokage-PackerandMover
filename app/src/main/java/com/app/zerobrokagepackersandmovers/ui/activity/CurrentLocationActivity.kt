@@ -11,7 +11,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.app.zerobrokagepackersandmovers.R
 import com.app.zerobrokagepackersandmovers.databinding.ActivityCurrentLocationBinding
-import com.google.android.gms.location.*
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.ola.mapsdk.view.OlaMap
 import com.ola.mapsdk.view.OlaMapView
 import java.util.Locale
@@ -44,20 +45,20 @@ class CurrentLocationActivity : AppCompatActivity() {
 
         binding.tvLocation
 
-       /* binding.mapView.getMap(
-            apiKey = "ZqO2BstG4Lh4MeY1ybKMUCHBzmE6kv6T0bL2uYv6",
-            olaMapCallback = object : OlaMapCallback {
-                override fun onMapReady(olaMap: OlaMap) {
-                    olaMapInstance = olaMap
-                    checkLocationPermissionAndFetch()
-                }
+        /* binding.mapView.getMap(
+             apiKey = "ZqO2BstG4Lh4MeY1ybKMUCHBzmE6kv6T0bL2uYv6",
+             olaMapCallback = object : OlaMapCallback {
+                 override fun onMapReady(olaMap: OlaMap) {
+                     olaMapInstance = olaMap
+                     checkLocationPermissionAndFetch()
+                 }
 
-                override fun onMapError(error: String) {
-                    Toast.makeText(this@CurrentLocationActivity, "Server Error", Toast.LENGTH_SHORT)
-                        .show()
-                }
-            }
-        )*/
+                 override fun onMapError(error: String) {
+                     Toast.makeText(this@CurrentLocationActivity, "Server Error", Toast.LENGTH_SHORT)
+                         .show()
+                 }
+             }
+         )*/
     }
 
     /* private fun checkLocationPermissionAndFetch() {
