@@ -1,0 +1,51 @@
+package com.app.zerobrokagepackerandmover.model
+
+data class LeadsDetails(
+    val status: Boolean,
+    val message: String,
+    val data: OrderData
+)
+
+data class OrderData(
+    val userId: Int,
+    val date: String,
+    val otp: String?,
+    val phone_number: String,
+    val order_id: Int,
+    val user_id: Int,
+    val form_type: String,
+    val location_from: String,
+    val location_to: String,
+    val mobile_number: String,
+    val user_location_from_lat: String,
+    val user_location_from_lng: String,
+    val user_location_to_lat: String,
+    val user_location_to_lng: String,
+    val pickup_date: String,
+    val pickup_time: String,
+    val distance: Int,
+    val min_distance: String,
+    val max_distance: String,
+    val created_at: String,
+    val order_updated_at: String,
+    val rate: Int,
+    val base_price: Int,
+    val distance_amount: String,
+    val total_amount: String,
+    val booking_amount: String,
+    val balance_amount: String,
+    val order_status: String?,
+    val followup_at: String?,
+    val followup_note: String?,
+    val category_name: String,
+    val subcategory_name: String,
+    val item_name: String,
+    val quantity: Int,
+    val payment_amount: String?,
+    val payment_status: String?,
+    val razorpay_payment_id: String?,
+    val razorpay_order_id: String?,
+    val payment_method: String?,
+    val payment_link: String?,
+    val payment_date: String?
+)

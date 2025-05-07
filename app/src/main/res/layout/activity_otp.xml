@@ -52,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <com.chaos.view.PinView
-        android:id="@+id/otp_view"
+        android:id="@+id/pinView"
         style="@style/PinWidget.PinView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,8 +77,8 @@
         android:background="@drawable/shape_edit_text"
         android:text="Verify"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/otp_view"
-        app:layout_constraintStart_toStartOf="@id/otp_view"
-        app:layout_constraintEnd_toEndOf="@id/otp_view"/>
+        app:layout_constraintTop_toBottomOf="@id/pinView"
+        app:layout_constraintStart_toStartOf="@id/pinView"
+        app:layout_constraintEnd_toEndOf="@id/pinView"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
